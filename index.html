@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta property="og:title" content="QTTT - Hệ thống quản trị trung tâm" />
+<meta property="og:description" content="Quản trị trung tâm hiệu quả, đồng bộ và chuyên nghiệp." />
+<meta property="og:image" content="https://res.cloudinary.com/dh2zcmzaf/image/upload/v1750166460/image_cnoupu.png" />
+<meta property="og:type" content="website" />
+  <title>QTTT</title>
+  <link rel="icon" type="image/png" href="image.png">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Optional: Add header or footer */
+    .header {
+      padding: 10px;
+      background-color: #1f2937;
+      color: #fff;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- <pre id="logOutput">[LOG]:</pre> -->
+  <div class="iframe-container">
+    <iframe
+      allow="camera; microphone; geolocation; clipboard-read; clipboard-write; fullscreen; display-capture; autoplay"
+      src="https://www.appsheet.com/start/a7157b16-7592-4398-a7ef-7bd9689a7886"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+
+  <!-- <script>
+    // Ghi log ra cả console và HTML
+    const log = (msg) => {
+      const el = document.getElementById('logOutput');
+      el.textContent += '\n' + msg;
+      console.log(msg); // vẫn giữ console cho máy tính
+    };
+
+    function getPlatform() {
+      const ua = navigator.userAgent.toLowerCase();
+      // const isTablet = /ipad|tablet|(android(?!.*mobile))/i.test(ua);
+      const isMobile = /mobi|android|iphone/i.test(ua);
+
+      log("User Agent: " + ua);
+      log("Is mobile: " + isMobile);
+
+      // if (isTablet) return 'tablet';
+      if (isMobile) return 'mobile';
+      return 'desktop';
+    }
+
+    const platform = getPlatform();
+    log("Platform: " + platform);
+// https://www.appsheet.com/start/a7157b16-7592-4398-a7ef-7bd9689a7886?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&platform=desktop#appName=Qu%E1%BA%A3nl%C3%BDTrungt%C3%A2m-49751858&vss=H4sIAAAAAAAAA52OvQ4CIRCE32VqnoDWmGiMNhobscBjSYh3cDk49UJ4dxd_Yqt2u7PzzU7GxdF1m3Rzhjzkz7aiCRJZYTf1pCAVZsGnIbQKQmGju6e4CHUoKEfxZhNFyPw9Kv__KuAM-eSso6HmVIr5F8PnSrBQ_SgC3Zj0qaVHSfaXwpoNzRjJ7LnCj6_j0s9vvfZmHQzHWd1GKndbTHqGUQEAAA==&view=Home
+    const baseURL = "https://www.appsheet.com/start/a7157b16-7592-4398-a7ef-7bd9689a7886?zarsrc=30&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo";
+    const url = `${baseURL}&platform=${platform}#appName=QuảnlýTrungtâm-49751858&vss=H4sIAAAAAAAAA52OvQ4CIRCE32VqnoDWmGiMNhobscBjSYh3cDk49UJ4dxd_Yqt2u7PzzU7GxdF1m3Rzhjzkz7aiCRJZYTf1pCAVZsGnIbQKQmGju6e4CHUoKEfxZhNFyPw9Kv__KuAM-eSso6HmVIr5F8PnSrBQ_SgC3Zj0qaVHSfaXwpoNzRjJ7LnCj6_j0s9vvfZmHQzHWd1GKndbTHqGUQEAAA==&view=Home`;
+    log("App URL: " + url);
+    document.getElementById("appIframe").src = url;
+  </script> -->
+
+  <script>
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const viewport = document.getElementById('viewport');
+      if (isMobile()) {
+        // Zoom 300% tương đương initial-scale = 3.0
+        viewport.setAttribute('content', 'width=device-width, initial-scale=3.0, maximum-scale=3.0, user-scalable=no');
+      } else {
+        // Mặc định cho desktop
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+      }
+    });
+  </script>
+</body>
+</html>
